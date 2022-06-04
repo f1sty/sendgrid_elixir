@@ -52,7 +52,7 @@ defmodule SendGrid do
   end
 
   defp process_request_body(body) when is_binary(body), do: body
-  defp process_request_body(body), do: Poison.encode!(body)
+  defp process_request_body(body), do: Jason.encode!(body)
 
   # Override the base headers with any passed in.
   defp process_request_headers(request_headers) do
@@ -64,7 +64,7 @@ defmodule SendGrid do
   end
 
   defp process_response_body(body) do
-    case Poison.decode(body) do
+    case Jason.decode(body) do
       {:ok, data} -> data
       _ -> body
     end

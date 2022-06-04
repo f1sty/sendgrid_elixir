@@ -36,10 +36,10 @@ defmodule SendGrid.Mixfile do
 
   defp deps do
     [
-      {:earmark,      "~> 1.2",  only: :dev},
-      {:ex_doc,       "~> 0.16.2", only: :dev},
+      {:earmark,      "~> 1.4",  only: :dev},
+      {:ex_doc,       "~> 0.28.4", only: :dev},
       {:httpoison,    ">= 0.11.0"},
-      {:poison,       ">= 2.0.0 or >= 3.0.0"},
+      {:jason,        "~> 1.3"},
       {:phoenix,      "~> 1.2", only: :test},
       {:phoenix_html, "~> 2.9", only: :test}
     ]
